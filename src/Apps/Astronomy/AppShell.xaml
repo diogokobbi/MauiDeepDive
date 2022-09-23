@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Astronomy.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Astronomy.Pages"
+    FlyoutIcon="moon.png">
+
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" BackgroundColor="DarkSlateBlue">
+            <Image Source="moon.png"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="Astronomy" Icon="moon.png" Route = "astronomy">
+        <ShellContent Title="Moon Phase" Icon="moon.png"
+        ContentTemplate="{DataTemplate local:MoonPhasePage}"/>
+
+        <ShellContent Title="Sunrise" Icon="sun.png"
+        ContentTemplate="{DataTemplate local:SunrisePage}"/>
+
+        <ShellContent Title="Bodies" Icon="comet.png"
+        ContentTemplate="{DataTemplate local:AstronomicalBodiesPage}"/>
+    </FlyoutItem>
+    <FlyoutItem Title="About" Icon="question.png" Route="about">
+        <ShellContent
+        ContentTemplate="{DataTemplate local:AboutPage}"/>
+    </FlyoutItem>
+
+    <TabBar>
+        <Tab Title="Moon Phase" Icon="moon.png">
+            <ShellContent ContentTemplate="{DataTemplate local:MoonPhasePage}" />
+        </Tab>
+        <Tab Title="Sunrise" Icon="sun.png">
+            <ShellContent ContentTemplate="{DataTemplate local:SunrisePage}"/>
+        </Tab>
+        <Tab Title="Bodies" Icon="comet.png">
+            <ShellContent ContentTemplate="{DataTemplate local:AstronomicalBodiesPage}"/>
+        </Tab>
+    </TabBar>
+
+</Shell>
